@@ -11,6 +11,9 @@ public class PoseDetector : MonoBehaviour
     [SerializeField]
     GameObject oculusCursor;
 
+    [SerializeField]
+    MainCamera spectatorCamera;
+
     public string curPose = "";
 
     void Start()
@@ -24,8 +27,6 @@ public class PoseDetector : MonoBehaviour
 
     void PoseUpdated(string poseName)
     {
-        curPose = poseName;
-        //text.text = poseName;
         Debug.Log("POSE UPDATED: " + poseName);
 
         if(poseName == "FingerGunRight")
@@ -36,5 +37,11 @@ public class PoseDetector : MonoBehaviour
         {
             oculusCursor.SetActive(true);
         }
+
+        if (poseName == "Grab") {
+            spectatorCamera.SwitchFOV(!spectatorCamera.Is2D);
+        }
+
+        curPose = poseName;
     }
 }

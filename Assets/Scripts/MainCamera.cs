@@ -13,6 +13,9 @@ public class MainCamera : MonoBehaviour
 
     Camera camera;
 
+    [SerializeField]
+    GameObject cameraCube;
+
 
     public bool Is2D = false;
     int fov2D = 17;
@@ -25,10 +28,17 @@ public class MainCamera : MonoBehaviour
     {
         camera = GetComponent<Camera>();
         SwitchFOV(false);
+
+        // Debug.Log(cameraCube.GetComponent<Material>());
+
+        // Debug.Log the material of cameraCube
+
     }
 
     void Update()
     {
+        cameraCube.GetComponent<Renderer>().material.color = Is2D ? Color.green : Color.white;
+
         if(Input.GetKeyDown(KeyCode.Space))
         {
             SwitchFOV(!Is2D);
