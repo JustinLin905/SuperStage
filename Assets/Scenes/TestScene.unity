@@ -152,7 +152,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a44eaa08c6403054ca3fd24b187ca0e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slideImage: {fileID: 1960273660}
 --- !u!4 &23906249
 Transform:
   m_ObjectHideFlags: 0
