@@ -63,7 +63,7 @@ public class Slideshow : MonoBehaviour
     }
 
     IEnumerator GenerateSlides() {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         slides = importSlides.GetSlides();
         // Debug.Log("Slides: " + slides);
         
