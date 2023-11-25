@@ -11,7 +11,7 @@ public class ClapDetector : MonoBehaviour
     public OVRHand rightHand;
     public OVRHand leftHand;
 
-    public float thresholdDistance = 0.15f;
+    public float thresholdDistance = 1f;
 
     private Vector3 newPosRight;
     private Vector3 prevPosRight;
