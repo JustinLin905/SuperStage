@@ -13,7 +13,7 @@ public class MainCamera : MonoBehaviour
 
     Camera camera;
 
-    int fov2D = 23;
+    int fov2D = 17;
     int fov3D = 35;
 
     [SerializeField]
@@ -62,6 +62,8 @@ public class MainCamera : MonoBehaviour
             {
                 StartCoroutine(FovTransition(fov2D, fov3D));
                 camera.cullingMask = camera.cullingMask | (1 << 6);
+                camera.cullingMask = camera.cullingMask | (1 << 8);
+
 
             }
         }
@@ -80,9 +82,13 @@ public class MainCamera : MonoBehaviour
         if (to == fov2D)
         {
             camera.cullingMask = camera.cullingMask & ~(1 << 6);
+            camera.cullingMask = camera.cullingMask & ~(1 << 8);
+
         } else
         {
             //camera.cullingMask = camera.cullingMask | (1 << 6);
+            //camera.cullingMask = camera.cullingMask | (1 << 8);
+
         }
     }
 
