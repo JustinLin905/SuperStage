@@ -13,8 +13,10 @@ public class MainCamera : MonoBehaviour
 
     Camera camera;
 
-    int fov2D = 23;
-    int fov3D = 35;
+
+    public bool Is2D = false;
+    int fov2D = 17;
+    int fov3D = 33;
 
     [SerializeField]
     float fovSpeed = 2.5f;
@@ -25,15 +27,11 @@ public class MainCamera : MonoBehaviour
         SwitchFOV(false);
     }
 
-
-    bool temp = false;
-
     void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space))
         {
-            temp = !temp;
-            SwitchFOV(temp);
+            SwitchFOV(!Is2D);
         }
         
         RotateFollow(presenter.GetCameraFollow());
@@ -49,21 +47,25 @@ public class MainCamera : MonoBehaviour
         transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, followRotSpeed * Time.deltaTime);
     }
 
-    void SwitchFOV(bool is2D)
+    public void SwitchFOV(bool is2D)
     {
-        if (presenter.GetCameraFollow() != presenter.transform) // only zoom in if focused on specific screen
+        if (is2D == Is2D) return; // no need to switch FOV if already in the desired mode
+
+        if (is2D)
         {
-            if (is2D)
+            if (presenter.GetCameraFollow() != presenter.transform)
             {
+                Is2D = true;
                 StartCoroutine(FovTransition(fov3D, fov2D));
                 //camera.cullingMask = camera.cullingMask & ~(1 << 6);
             }
-            else
-            {
-                StartCoroutine(FovTransition(fov2D, fov3D));
-                camera.cullingMask = camera.cullingMask | (1 << 6);
-
-            }
+        }
+        else
+        {
+            Is2D = false;
+            StartCoroutine(FovTransition(fov2D, fov3D));
+            camera.cullingMask = camera.cullingMask | (1 << 6);
+            camera.cullingMask = camera.cullingMask | (1 << 8);
         }
     }
 
@@ -80,9 +82,13 @@ public class MainCamera : MonoBehaviour
         if (to == fov2D)
         {
             camera.cullingMask = camera.cullingMask & ~(1 << 6);
+            camera.cullingMask = camera.cullingMask & ~(1 << 8);
+
         } else
         {
             //camera.cullingMask = camera.cullingMask | (1 << 6);
+            //camera.cullingMask = camera.cullingMask | (1 << 8);
+
         }
     }
 
