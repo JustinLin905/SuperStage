@@ -4,15 +4,23 @@ using UnityEngine;
 
 public class Screen : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    private void OnTriggerStay(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Presenter"))
+        {
+            Presenter presenter = other.gameObject.GetComponent<Presenter>();
+            if (presenter)
+            {
+                presenter.UpdateCameraFollow(transform);
+            }
+        }        
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDrawGizmos()
     {
-        
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward*(-5f));
     }
+    
 }
