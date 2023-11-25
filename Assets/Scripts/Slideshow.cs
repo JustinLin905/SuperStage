@@ -25,7 +25,10 @@ public class Slideshow : MonoBehaviour
 
     // Start is called before the first frame update
     void Start()
-    {
+    {   
+        // Find an object named "Scripts" in the scene and get its ImportSlides component
+        importSlides = GameObject.Find("Scripts").GetComponent<ImportSlides>();
+
         isSnapped = false;
         Debug.Log("Sample list item width: " + sampleListItem.rect.width);
         adjustment = sampleListItem.rect.width / 2;
@@ -63,7 +66,7 @@ public class Slideshow : MonoBehaviour
     }
 
     IEnumerator GenerateSlides() {
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.1f);
         slides = importSlides.GetSlides();
         // Debug.Log("Slides: " + slides);
         
