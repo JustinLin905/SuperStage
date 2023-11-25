@@ -21,32 +21,41 @@ public class FingerGun : MonoBehaviour
 
     public LayerMask layer; // Specify the layer to ignore
 
+    [SerializeField]
+    PoseDetector poseDetector;
+
+    Ray ray;
+    RaycastHit hit;
+
 
     void Update()
     {
+        if (poseDetector.curPose == "FingerGunRight")
+        {
+            ray = new Ray(fingertip.position, fingertip.right);
+
+            rayLength = maxRayLength;
+            if (Physics.Raycast(ray, out hit, maxRayLength, layer))
+            {
+                rayLength = Vector3.Magnitude(ray.origin - hit.point);
+            }
+
+            hitMarker.transform.position = fingertip.position + fingertip.right * rayLength;
+            hitMarker.SetActive(rayLength < maxRayLength);
+        } 
+        else 
+        {
+            hitMarker.SetActive(false);
+        }
     }
 
     private void OnDrawGizmos()
     {
-        Ray ray = new Ray(fingertip.position, fingertip.right);
-        RaycastHit hit;
-
-        rayLength = maxRayLength;
-        if (Physics.Raycast(ray, out hit, maxRayLength, layer))
+        if (poseDetector.curPose == "FingerGunRight")
         {
-            // Log information about the hit
-            Debug.Log("Hit object: " + hit.collider.gameObject.name);
-            Debug.Log("Hit point: " + hit.point);
-            Debug.Log("Hit normal: " + hit.normal);
-
-            rayLength = Vector3.Magnitude(ray.origin - hit.point);
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawLine(fingertip.position, fingertip.position + fingertip.right * rayLength);
         }
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(fingertip.position, fingertip.position + fingertip.right * rayLength);
         
-        hitMarker.transform.position = fingertip.position + fingertip.right * rayLength;
-        hitMarker.SetActive(rayLength < maxRayLength);
-
     }
 }

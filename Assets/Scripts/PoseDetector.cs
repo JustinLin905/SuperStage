@@ -9,7 +9,9 @@ public class PoseDetector : MonoBehaviour
     List<ActiveStateSelector> poses;
 
     [SerializeField]
-    TMPro.TextMeshPro text;
+    GameObject oculusCursor;
+
+    public string curPose = "";
 
     void Start()
     {
@@ -22,7 +24,17 @@ public class PoseDetector : MonoBehaviour
 
     void PoseUpdated(string poseName)
     {
-        text.text = poseName;
+        curPose = poseName;
+        //text.text = poseName;
         Debug.Log("POSE UPDATED: " + poseName);
+
+        if(poseName == "FingerGunRight")
+        {
+            oculusCursor.SetActive(false);
+        }
+        else
+        {
+            oculusCursor.SetActive(true);
+        }
     }
 }
