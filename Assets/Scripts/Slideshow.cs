@@ -15,7 +15,7 @@ public class Slideshow : MonoBehaviour
 
     public float snapForce;
     private float snapSpeed;
-    private float adjustment = 0f;
+    private float adjustment;
 
     // For slide instantiation
     [Header("Slide Loading & Generation")]
@@ -28,6 +28,7 @@ public class Slideshow : MonoBehaviour
     {
         isSnapped = false;
         Debug.Log("Sample list item width: " + sampleListItem.rect.width);
+        adjustment = sampleListItem.rect.width / 2;
 
         // Get slides from ImportSlides and then instantiate them
         StartCoroutine(GenerateSlides());
@@ -36,22 +37,22 @@ public class Slideshow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x / (sampleListItem.rect.width / 2 + HLG.spacing)));
+        int currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
 
         // Snap to slide
         if (scrollRect.velocity.magnitude < 200 && !isSnapped) {
             Debug.Log("Snapping to slide " + currentItem);
-            Debug.Log("Moving from " + contentPanel.localPosition.x + " to " + (0 - (currentItem * (sampleListItem.rect.width / 2 + HLG.spacing + adjustment))));
+            Debug.Log("Moving from " + contentPanel.localPosition.x + " to " + (0 - (currentItem * (sampleListItem.rect.width + HLG.spacing) + adjustment)));
 
             scrollRect.velocity = Vector2.zero;
             snapSpeed += snapForce * Time.deltaTime;
 
             contentPanel.localPosition = new Vector3(
-                Mathf.MoveTowards(contentPanel.localPosition.x, 0 - (currentItem * (sampleListItem.rect.width / 2 + HLG.spacing + adjustment)), snapSpeed), 
+                Mathf.MoveTowards(contentPanel.localPosition.x, 0 - (currentItem * (sampleListItem.rect.width + HLG.spacing) + adjustment), snapSpeed), 
             contentPanel.localPosition.y, 
             contentPanel.localPosition.z);
 
-            if (contentPanel.localPosition.x == 0 - (currentItem * (sampleListItem.rect.width / 2 + HLG.spacing + adjustment))) {
+            if (contentPanel.localPosition.x == 0 - (currentItem * (sampleListItem.rect.width + HLG.spacing) + adjustment)) {
                 isSnapped = true;
             }
         }
