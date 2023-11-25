@@ -59,7 +59,7 @@ public class ImportSlides : MonoBehaviour
 
     IEnumerator LoadImage(string imagePath)
     {
-        WWW www = new WWW("file:///" + imagePath);
+        WWW www = new WWW("file://" + imagePath);
         yield return www;
 
         Texture2D texture = new Texture2D(2, 2);
