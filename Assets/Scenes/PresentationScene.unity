@@ -480,6 +480,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a379f34d4f4f2e408d34f14bfb753ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &483866179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2580441569135507087, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
+  m_PrefabInstance: {fileID: 456997051}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b942c16a6d6a4edaad7c18c7d5762cdf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &567061024 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7192818547691322728, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
@@ -1013,6 +1024,7 @@ GameObject:
   - component: {fileID: 1010727162}
   - component: {fileID: 1010727164}
   - component: {fileID: 1010727163}
+  - component: {fileID: 1010727167}
   - component: {fileID: 1010727165}
   - component: {fileID: 1010727166}
   m_Layer: 0
@@ -1063,7 +1075,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hand: {fileID: 1010727163}
-  _fingerFeatureStateProvider: {fileID: 0}
+  _fingerFeatureStateProvider: {fileID: 1010727167}
   _shapes:
   - {fileID: 11400000, guid: 7af5cec3fd5e9be42a212c88767c9b2b, type: 2}
 --- !u!114 &1010727165
@@ -1098,6 +1110,19 @@ MonoBehaviour:
   _whenUnselected:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1010727167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1010727161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 870d37507a21e5e42877dca0f61dcd28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fingerFeatureStateProvider: {fileID: 483866179}
 --- !u!4 &1185819925 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8222955819950065905, guid: 72c3a1fb7abec404bb9619e642689ebf, type: 3}
