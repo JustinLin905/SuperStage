@@ -13,10 +13,10 @@ public class ImportSlides : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        folderName = "SuperStage";
+        string folderName = "SuperStageSlides";
         folderPath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), folderName);
 
-        if (!Directory.Exists(folderPath)
+        if (!Directory.Exists(folderPath))
         {
             Directory.CreateDirectory(folderPath);
         }
@@ -29,13 +29,32 @@ public class ImportSlides : MonoBehaviour
     {
         // Get image files from folder
         DirectoryInfo di = new DirectoryInfo(folderPath);
-        FileInfo[] imageFiles = di.GetFiles("*.{jpg,png,jpeg}");
+        FileInfo[] allFiles = di.GetFiles("*.*");
+        int currLength = allFiles[0].FullName.Length;
 
+        // Sort allFiles in numerical order, e.g. Slide 1 < Slide 2 < ... < Slide 10 < ...
+        FileInfo[] imageFiles = new FileInfo[allFiles.Length];
+        int index = 0;
+        while (index < imageFiles.Length)
+        {
+            for (int i = 0; i < allFiles.Length; ++i)
+            {
+                if (allFiles[i].FullName.Length == currLength)
+                {
+                    imageFiles[index] = allFiles[i];
+                    ++index;
+                }
+            }
+            ++currLength;
+        }
+
+        // Load each image
         foreach(FileInfo image in imageFiles)
         {
             string fullPath = image.FullName;
             StartCoroutine(LoadImage(fullPath));
         }
+
     }
 
     IEnumerator LoadImage(string imagePath)
@@ -48,5 +67,10 @@ public class ImportSlides : MonoBehaviour
 
         Sprite slide = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
         slides.Add(slide);
+    }
+
+    public List<Sprite> GetSlides()
+    {
+        return slides;
     }
 }
