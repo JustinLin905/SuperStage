@@ -17,4 +17,10 @@ public class Screen : MonoBehaviour
         }        
     }
 
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.up*5f);
+    }
+    
 }
