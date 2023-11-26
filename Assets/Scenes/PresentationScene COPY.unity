@@ -6004,13 +6004,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 400030793}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.026315782, y: -0.29333338, z: 0.07473682}
+  m_LocalScale: {x: 0.1052632, y: 0.22222221, z: 0.1052632}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 992895131}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1856433135}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &405167081
 PrefabInstance:
@@ -14925,7 +14925,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &992895131
 Transform:
   m_ObjectHideFlags: 0
@@ -14936,8 +14936,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.256479, y: 2.218472, z: -1.644295}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 673587149}
   - {fileID: 115982297}
@@ -23572,6 +23572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mat: {fileID: 0}
   fadeSpeed: 1
+  scaleSpeed: 2
+  earthMoonObj: {fileID: 992895130}
 --- !u!23 &1856433133
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -23634,7 +23636,8 @@ Transform:
   m_LocalPosition: {x: 0.25, y: 1.32, z: -0.71}
   m_LocalScale: {x: 9.5, y: 4.5, z: 9.5}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 400030794}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1892704310
@@ -26722,4 +26725,3 @@ SceneRoots:
   - {fileID: 1223374236}
   - {fileID: 1040629137}
   - {fileID: 1856433135}
-  - {fileID: 400030794}
