@@ -14,6 +14,9 @@ public class PoseDetector : MonoBehaviour
     [SerializeField]
     MainCamera spectatorCamera;
 
+    [SerializeField]
+    Presenter presenter;
+
     public string curPose = "";
 
     void Start()
@@ -40,6 +43,10 @@ public class PoseDetector : MonoBehaviour
 
         if (poseName == "Grab") {
             spectatorCamera.SwitchFOV(!spectatorCamera.Is2D);
+        }
+
+        if (poseName == "ThumbsUp") {
+            presenter.StartFireworks();
         }
 
         curPose = poseName;

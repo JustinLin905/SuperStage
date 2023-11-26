@@ -44,4 +44,11 @@ public class Presenter : MonoBehaviour
         return cameraFollow;
     }
 
+    public void StartFireworks()
+    {
+        if (cameraFollow != transform) {
+            cameraFollow.GetComponent<Screen>().PlayFireworks();
+        }
+    }
+
 }
