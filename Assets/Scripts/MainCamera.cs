@@ -15,6 +15,8 @@ public class MainCamera : MonoBehaviour
 
     [SerializeField]
     GameObject cameraCube;
+    [SerializeField]
+    GameObject cameraUI;
 
 
     public bool Is2D = false;
@@ -28,6 +30,7 @@ public class MainCamera : MonoBehaviour
     {
         camera = GetComponent<Camera>();
         SwitchFOV(false);
+        cameraUI.SetActive(false);
 
         // Debug.Log(cameraCube.GetComponent<Material>());
 
@@ -68,6 +71,7 @@ public class MainCamera : MonoBehaviour
                 Is2D = true;
                 StartCoroutine(FovTransition(fov3D, fov2D));
                 //camera.cullingMask = camera.cullingMask & ~(1 << 6);
+                cameraUI.SetActive(true);
             }
         }
         else
@@ -76,6 +80,7 @@ public class MainCamera : MonoBehaviour
             StartCoroutine(FovTransition(fov2D, fov3D));
             camera.cullingMask = camera.cullingMask | (1 << 6);
             camera.cullingMask = camera.cullingMask | (1 << 8);
+            cameraUI.SetActive(false);
         }
     }
 
