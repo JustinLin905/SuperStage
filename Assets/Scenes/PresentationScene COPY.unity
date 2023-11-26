@@ -22002,6 +22002,50 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_NormalColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_NormalColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_NormalColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_PressedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_PressedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_PressedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_PressedColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.a
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152003528459931954, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: m_Colors.m_HighlightedColor.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: spaceEnv
       value: 
