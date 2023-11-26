@@ -7547,9 +7547,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7192818547691413832, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 808493755}
-    - targetCorrespondingSourceObject: {fileID: 7192818547691413832, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1597448056}
     - targetCorrespondingSourceObject: {fileID: 7415146172554156808, guid: f39a9d103c4129b42a53567f6cd8356a, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1094822536}
@@ -10540,7 +10537,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &680324527
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11824,6 +11821,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 680324527}
+  - {fileID: 1597448056}
   m_Father: {fileID: 567061032}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &808493756
@@ -11868,7 +11866,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 808493754}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -19728,7 +19726,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1597448056
 Transform:
   m_ObjectHideFlags: 0
@@ -19737,14 +19735,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1597448055}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 0.003, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: 0, y: 0.015000701, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1199878805}
   - {fileID: 1230060460}
-  m_Father: {fileID: 567061032}
+  m_Father: {fileID: 808493755}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!4 &1599819646 stripped
 Transform:
