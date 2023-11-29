@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class Slideshow : MonoBehaviour
 {
+
+    [SerializeField]
+    SpaceEnvironment spaceEnv;
+
+    [SerializeField]
+    int triggerSpaceSlideNum = 3;
+
     public ScrollRect scrollRect;
     public RectTransform contentPanel;
     public RectTransform sampleListItem;
@@ -53,6 +60,7 @@ public class Slideshow : MonoBehaviour
             contentPanel.localPosition.z);
 
             if (contentPanel.localPosition.x == 0 - (currentItem * (sampleListItem.rect.width + HLG.spacing) + adjustment)) {
+                spaceEnv.TriggerSpaceEnvironemnt(currentItem == triggerSpaceSlideNum);
                 isSnapped = true;
             }
         }

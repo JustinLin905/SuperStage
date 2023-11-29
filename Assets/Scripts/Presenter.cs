@@ -10,11 +10,6 @@ public class Presenter : MonoBehaviour
     [SerializeField]
     MainCamera spectatorCamera;
 
-    void Start()
-    {
-        
-    }
-
     void FixedUpdate()
     {
         // follow player by default, in fixed update to be called first, may be overridden
