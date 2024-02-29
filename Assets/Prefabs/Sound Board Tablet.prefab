@@ -1270,6 +1270,8 @@ GameObject:
   - component: {fileID: 4120751510906736572}
   - component: {fileID: 2371288608957740577}
   - component: {fileID: 7205557639074371257}
+  - component: {fileID: 1703723677635934403}
+  - component: {fileID: 4453572798792387068}
   m_Layer: 6
   m_Name: Sound Board Tablet
   m_TagString: Untagged
@@ -1406,8 +1408,8 @@ MonoBehaviour:
   _transferOnSecondSelection: 0
   _addNewPointsToFront: 0
   _forwardElement: {fileID: 0}
-  _oneGrabTransformer: {fileID: 0}
-  _twoGrabTransformer: {fileID: 0}
+  _oneGrabTransformer: {fileID: 4453572798792387068}
+  _twoGrabTransformer: {fileID: 1703723677635934403}
   _targetTransform: {fileID: 0}
   _maxGrabPoints: -1
 --- !u!114 &2371288608957740577
@@ -1464,6 +1466,38 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectContainerPrefab: {fileID: 8850716769574700529, guid: 12ebe405589a7774e8d898862080f634, type: 3}
   scrollViewContent: {fileID: 5495376412609950720}
+--- !u!114 &1703723677635934403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153353649287827383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b053556d972eae24b947c1477538bff1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _constraints:
+    ConstraintsAreRelative: 0
+    MinScale:
+      Constrain: 0
+      Value: 0
+    MaxScale:
+      Constrain: 0
+      Value: 0
+--- !u!114 &4453572798792387068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153353649287827383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7391571368980240276
 GameObject:
   m_ObjectHideFlags: 0
