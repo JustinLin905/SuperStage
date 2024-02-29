@@ -1,32 +1,39 @@
+// ViewModel used to spawn Sound Effect Containers
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundBoard : MonoBehaviour
 {
-    private GameObject universalAudioSource;
-    private List<SoundEffect> soundEffects;
+    [SerializeField]
+    private GameObject soundEffectContainerPrefab;
+    [SerializeField]
+    private GameObject scrollViewContent;
+    public static GameObject universalAudioSource { get; private set; }
 
-    // Start is called before the first frame update
     void Start()
     {
         // Find GameObject in Scene named "Universal Audiosource"
         universalAudioSource = GameObject.Find("Universal Audiosource");
-
-        // Get the relevant sound clips for this slide number from SoundEffectLoader
-        soundEffects = SoundEffectLoader.queue.FindAll(se => se.slideNumber == Slideshow.currentItem);
-        Debug.Log("SoundEffect count for slide " + Slideshow.currentItem + ": " + soundEffects.Count);
-
-        // Log the names of the sound effects
-        foreach (SoundEffect se in soundEffects)
-        {
-            Debug.Log(se.name);
-        }
     }
 
-    public void OnPressPlaySoundEffect(int index)
+    public void OnPressStop()
     {
-        // Play the sound effect at the given index
-        universalAudioSource.GetComponent<AudioSource>().PlayOneShot(SoundEffectLoader.queue[index].clip);
+        // Stop all sounds from universalAudioSource
+        universalAudioSource.GetComponent<AudioSource>().Stop();
+    }
+
+    public void Initialize()
+    {
+        // Generate buttons for each sound effect
+        for (int i = 0; i < SoundEffectLoader.queue.Count; i++)
+        {
+            // Instantiate a sound effect container prefab under scrollViewContent
+            GameObject soundEffectContainer = Instantiate(soundEffectContainerPrefab, scrollViewContent.transform);
+
+            // Call the Instantiate method on the soundEffectContainerPrefab
+            soundEffectContainer.GetComponent<SoundEffectContainer>().Instantiate(SoundEffectLoader.queue[i].name, i);
+        }
     }
 }

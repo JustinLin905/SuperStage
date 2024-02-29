@@ -1,3 +1,5 @@
+// Model for loading audio files from a folder and storing them in a list for use by ViewModels/Scripts.
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,17 +12,11 @@ public class SoundEffect
 {
     public string name;
     public AudioClip clip;
-    public int slideNumber;
 
     public SoundEffect(string name, AudioClip clip)
     {
         this.clip = clip;
-        
-        // Extract slide number from name
-        // The name is formatted like "Sound01 SoundEffectName"
-        string[] splitName = name.Split(' ');
-        this.name = splitName.Length > 1 ? splitName[1] : "Untitled";
-        this.slideNumber = int.Parse(splitName[0].Substring(5)); 
+        this.name = name;
     }
 }
 
@@ -30,6 +26,7 @@ public class SoundEffectLoader : MonoBehaviour
     private string folderPath;
 
     public static List<SoundEffect> queue { private set; get; } = new List<SoundEffect>();
+    public SoundBoard soundBoard;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +45,7 @@ public class SoundEffectLoader : MonoBehaviour
     private IEnumerator InitializeAudioFiles()
     {
         yield return LoadAllAudioFiles();
+        soundBoard.Initialize();
     }
 
     private IEnumerator LoadAllAudioFiles()
@@ -67,7 +65,7 @@ public class SoundEffectLoader : MonoBehaviour
         // Log names of all audio clips
         foreach (SoundEffect clip in queue)
         {
-            Debug.Log("Loaded Sound Effect name: " + clip.name + " for slide " + clip.slideNumber);
+            Debug.Log("Loaded Sound Effect name: " + clip.name);
         }
     }
 
