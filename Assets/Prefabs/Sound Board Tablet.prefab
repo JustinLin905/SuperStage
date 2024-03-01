@@ -519,7 +519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0.0001745224}
+  m_AnchoredPosition: {x: 0, y: -0.00041103363}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &5844267290727227701
@@ -1272,6 +1272,7 @@ GameObject:
   - component: {fileID: 7205557639074371257}
   - component: {fileID: 1703723677635934403}
   - component: {fileID: 4453572798792387068}
+  - component: {fileID: 3479576173943166235}
   m_Layer: 6
   m_Name: Sound Board Tablet
   m_TagString: Untagged
@@ -1466,6 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundEffectContainerPrefab: {fileID: 8850716769574700529, guid: 12ebe405589a7774e8d898862080f634, type: 3}
   scrollViewContent: {fileID: 5495376412609950720}
+  animator: {fileID: 3479576173943166235}
 --- !u!114 &1703723677635934403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1498,6 +1500,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3236b8f205019504589358e7e0412a38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &3479576173943166235
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7153353649287827383}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfbae2437bde05043bd8f23c5b9192b0, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &7391571368980240276
 GameObject:
   m_ObjectHideFlags: 0

@@ -18,7 +18,7 @@ public class PoseDetector : MonoBehaviour
     Presenter presenter;
 
     [SerializeField]
-    GameObject soundBoard;
+    SoundBoard soundBoard;
 
     public string curPose = "";
 
@@ -53,8 +53,15 @@ public class PoseDetector : MonoBehaviour
         }
 
         if (poseName == "FramePoseTwoHanded") {
-            // Toggle sound board active state
-            soundBoard.SetActive(!soundBoard.activeSelf);
+            // Toggle animator between show and hide
+            if (soundBoard.isShowing)
+            {
+                soundBoard.Hide();
+            }
+            else
+            {
+                soundBoard.Show();
+            }
         }
 
         curPose = poseName;

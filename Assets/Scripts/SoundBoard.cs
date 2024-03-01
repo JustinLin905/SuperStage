@@ -10,7 +10,10 @@ public class SoundBoard : MonoBehaviour
     private GameObject soundEffectContainerPrefab;
     [SerializeField]
     private GameObject scrollViewContent;
+    [SerializeField]
+    private Animator animator;
     public static GameObject universalAudioSource { get; private set; }
+    public bool isShowing { get; private set; }
 
     void Start()
     {
@@ -35,5 +38,19 @@ public class SoundBoard : MonoBehaviour
             // Call the Instantiate method on the soundEffectContainerPrefab
             soundEffectContainer.GetComponent<SoundEffectContainer>().Instantiate(SoundEffectLoader.queue[i].name, i);
         }
+
+        isShowing = true;
+    }
+
+    public void Show()
+    {
+        animator.SetTrigger("Show");
+        isShowing = true;
+    }
+
+    public void Hide()
+    {
+        animator.SetTrigger("Hide");
+        isShowing = false;
     }
 }
