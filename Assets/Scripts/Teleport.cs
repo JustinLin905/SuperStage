@@ -34,6 +34,7 @@ public class Teleport : MonoBehaviour
 
         // Reset Y rotation
         // ResetYRotation();
+        // RotateY(18);
 
         Debug.Log("Teleporting to original position: " + transform.position + ", with Y rotation reset.");
     }
@@ -49,6 +50,11 @@ public class Teleport : MonoBehaviour
         eulerDifference.z = 0;
 
         transform.Rotate(0, eulerDifference.y, 0, Space.World);
+    }
+
+    public void RotateY(float angleDegrees)
+    {
+        transform.Rotate(0, angleDegrees, 0, Space.World);
     }
 
     private float NormalizeAngle(float angleDegrees)

@@ -53,6 +53,9 @@ public class PoseDetector : MonoBehaviour
 
         if (poseName == "ThumbsUp") {
             presenter.StartFireworks();
+        }
+
+        if (poseName == "ThumbsDown") {
             teleport.ResetPresenterPosition();
         }
 
@@ -66,6 +69,10 @@ public class PoseDetector : MonoBehaviour
             {
                 soundBoard.Show();
             }
+        }
+
+        if (poseName == "Scissors") {
+            teleport.RotateY(18);
         }
 
         curPose = poseName;
