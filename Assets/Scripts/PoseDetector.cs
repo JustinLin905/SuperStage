@@ -71,7 +71,11 @@ public class PoseDetector : MonoBehaviour
             }
         }
 
-        if (poseName == "Scissors") {
+        if (poseName == "ScissorsLeft") {
+            teleport.RotateY(-18);
+        }
+
+        if (poseName == "ScissorsRight") {
             teleport.RotateY(18);
         }
 
