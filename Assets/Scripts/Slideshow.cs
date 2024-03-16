@@ -30,6 +30,9 @@ public class Slideshow : MonoBehaviour
     public GameObject slidePrefab;         // The Slide prefab with an Image component
     public ImportSlides importSlides;      // ImportSlides script
 
+    // For other scripts to access current slide number
+    public static int currentItem { private set; get; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,7 +47,7 @@ public class Slideshow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
+        currentItem = Mathf.RoundToInt((0 - contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
 
         // Snap to slide
         if (scrollRect.velocity.magnitude < 200 && !isSnapped) {

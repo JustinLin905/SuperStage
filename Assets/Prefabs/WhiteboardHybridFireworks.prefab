@@ -20082,6 +20082,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28907d6e4e37bf429f73faaccf700f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceEnv: {fileID: 0}
+  triggerSpaceSlideNum: 17
   scrollRect: {fileID: 4797062313349270393}
   contentPanel: {fileID: 2517841526459737928}
   sampleListItem: {fileID: 6447861712264167114}
