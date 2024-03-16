@@ -20,6 +20,9 @@ public class PoseDetector : MonoBehaviour
     [SerializeField]
     SoundBoard soundBoard;
 
+    [SerializeField]
+    Teleport teleport;
+
     public string curPose = "";
 
     void Start()
@@ -52,6 +55,10 @@ public class PoseDetector : MonoBehaviour
             presenter.StartFireworks();
         }
 
+        if (poseName == "ThumbsDown") {
+            teleport.ResetPresenterPosition();
+        }
+
         if (poseName == "FramePoseTwoHanded") {
             // Toggle animator between show and hide
             if (soundBoard.isShowing)
@@ -62,6 +69,14 @@ public class PoseDetector : MonoBehaviour
             {
                 soundBoard.Show();
             }
+        }
+
+        if (poseName == "ScissorsLeft") {
+            teleport.RotateY(-18);
+        }
+
+        if (poseName == "ScissorsRight") {
+            teleport.RotateY(18);
         }
 
         curPose = poseName;
