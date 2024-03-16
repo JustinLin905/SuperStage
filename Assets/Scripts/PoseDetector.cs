@@ -20,6 +20,9 @@ public class PoseDetector : MonoBehaviour
     [SerializeField]
     SoundBoard soundBoard;
 
+    [SerializeField]
+    Teleport teleport;
+
     public string curPose = "";
 
     void Start()
@@ -50,6 +53,7 @@ public class PoseDetector : MonoBehaviour
 
         if (poseName == "ThumbsUp") {
             presenter.StartFireworks();
+            teleport.ResetPresenterPosition();
         }
 
         if (poseName == "FramePoseTwoHanded") {
