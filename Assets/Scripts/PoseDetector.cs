@@ -22,7 +22,6 @@ public class PoseDetector : MonoBehaviour
 
     [SerializeField]
     Teleport teleport;
-
     public string curPose = "";
 
     void Start()
@@ -77,6 +76,14 @@ public class PoseDetector : MonoBehaviour
 
         if (poseName == "ScissorsRight") {
             teleport.RotateY(18);
+        }
+
+        if (poseName == "ThumbRight") {
+            presenter.PreviousSlide();
+        }
+
+        if (poseName == "ThumbLeft") {
+            presenter.NextSlide();
         }
 
         curPose = poseName;

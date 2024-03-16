@@ -20,7 +20,7 @@ public class Presenter : MonoBehaviour
     public void UpdateCameraFollow(Transform target)
     {
         cameraFollow = target;
-        
+
         // if target is camera, switch out of 2D mode
         /*if (cameraFollow == transform && spectatorCamera.Is2D)
         {
@@ -28,7 +28,8 @@ public class Presenter : MonoBehaviour
         }*/
     }
 
-    void LateUpdate() {
+    void LateUpdate()
+    {
         if (cameraFollow == transform && spectatorCamera.Is2D)
         {
             spectatorCamera.SwitchFOV(false);
@@ -41,9 +42,19 @@ public class Presenter : MonoBehaviour
 
     public void StartFireworks()
     {
-        if (cameraFollow != transform) {
+        if (cameraFollow != transform)
+        {
             cameraFollow.GetComponent<Screen>().PlayFireworks();
         }
     }
 
+    public void NextSlide()
+    {
+        cameraFollow.GetComponent<Screen>().NextSlide();
+    }
+
+    public void PreviousSlide()
+    {
+        cameraFollow.GetComponent<Screen>().PreviousSlide();
+    }
 }

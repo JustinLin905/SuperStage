@@ -73,6 +73,24 @@ public class Slideshow : MonoBehaviour
         }
     }
 
+    public void NextSlide() {
+        if (currentItem < slides.Count - 1) {
+            contentPanel.localPosition = new Vector3(
+                contentPanel.localPosition.x - (sampleListItem.rect.width + HLG.spacing), 
+                contentPanel.localPosition.y, 
+                contentPanel.localPosition.z);
+        }
+    }
+
+    public void PreviousSlide() {
+        if (currentItem > 0) {
+            contentPanel.localPosition = new Vector3(
+                contentPanel.localPosition.x + (sampleListItem.rect.width + HLG.spacing), 
+                contentPanel.localPosition.y, 
+                contentPanel.localPosition.z);
+        }
+    }
+
     IEnumerator GenerateSlides() {
         yield return new WaitForSeconds(0.1f);
         slides = importSlides.GetSlides();

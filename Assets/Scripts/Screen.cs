@@ -7,6 +7,8 @@ public class Screen : MonoBehaviour
 
     [SerializeField]
     GameObject fireworks;
+    [SerializeField]
+    Slideshow slideshow;
 
     private void OnTriggerStay(Collider other)
     {
@@ -27,7 +29,15 @@ public class Screen : MonoBehaviour
     }
 
     public void PlayFireworks() {
+        Debug.Log("Playing fireworks");
         fireworks.GetComponent<ParticleSystem>().Play();
     }
     
+    public void NextSlide() {
+        slideshow.NextSlide();
+    }
+
+    public void PreviousSlide() {
+        slideshow.PreviousSlide();
+    }
 }
