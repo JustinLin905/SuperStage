@@ -39,7 +39,7 @@ public class SoundBoard : MonoBehaviour
             soundEffectContainer.GetComponent<SoundEffectContainer>().Instantiate(SoundEffectLoader.queue[i].name, i);
         }
 
-        isShowing = true;
+        isShowing = false;
     }
 
     public void Show()
