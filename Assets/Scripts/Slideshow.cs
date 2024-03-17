@@ -10,7 +10,7 @@ public class Slideshow : MonoBehaviour
     SpaceEnvironment spaceEnv;
 
     [SerializeField]
-    int triggerSpaceSlideNum = 3;
+    int triggerSpaceSlideNum = 18;
 
     public ScrollRect scrollRect;
     public RectTransform contentPanel;
@@ -63,7 +63,7 @@ public class Slideshow : MonoBehaviour
             contentPanel.localPosition.z);
 
             if (contentPanel.localPosition.x == 0 - (currentItem * (sampleListItem.rect.width + HLG.spacing) + adjustment)) {
-                spaceEnv.TriggerSpaceEnvironemnt(currentItem == triggerSpaceSlideNum);
+                CheckForEnvironmentTriggers();
                 isSnapped = true;
             }
         }
@@ -74,21 +74,31 @@ public class Slideshow : MonoBehaviour
     }
 
     public void NextSlide() {
-        if (currentItem < slides.Count - 1) {
+        int cur = Mathf.RoundToInt((0 - contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
+        if (cur < slides.Count - 1) {
             contentPanel.localPosition = new Vector3(
                 contentPanel.localPosition.x - (sampleListItem.rect.width + HLG.spacing), 
                 contentPanel.localPosition.y, 
                 contentPanel.localPosition.z);
+
+            CheckForEnvironmentTriggers();
         }
     }
 
     public void PreviousSlide() {
-        if (currentItem > 0) {
+        int cur = Mathf.RoundToInt((0 - contentPanel.localPosition.x / (sampleListItem.rect.width + HLG.spacing)));
+        if (cur > 0) {
             contentPanel.localPosition = new Vector3(
                 contentPanel.localPosition.x + (sampleListItem.rect.width + HLG.spacing), 
                 contentPanel.localPosition.y, 
                 contentPanel.localPosition.z);
+
+            CheckForEnvironmentTriggers();
         }
+    }
+
+    public void CheckForEnvironmentTriggers() {
+        spaceEnv.TriggerSpaceEnvironemnt(currentItem == triggerSpaceSlideNum);
     }
 
     IEnumerator GenerateSlides() {

@@ -42,6 +42,7 @@ public class Screen : MonoBehaviour
     }
 
     public void PreviousSlide() {
+        Debug.Log("Screen.cs: PreviousSlide()");
         slideshow.PreviousSlide();
         backdropCanvas.SetTrigger("PreviousSlide");
     }
