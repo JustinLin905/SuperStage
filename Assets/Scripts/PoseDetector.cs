@@ -78,11 +78,11 @@ public class PoseDetector : MonoBehaviour
             teleport.RotateY(18);
         }
 
-        if (poseName == "ThumbRight") {
+        if (poseName == "ThumbLeft") {
             presenter.PreviousSlide();
         }
 
-        if (poseName == "ThumbLeft") {
+        if (poseName == "ThumbRight") {
             presenter.NextSlide();
         }
 
