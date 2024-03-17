@@ -25701,6 +25701,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5236953274159058155, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c798a871e7e18d046ba3851a4175bda3, type: 2}
+    - target: {fileID: 6733967867318396570, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8873638019076363714, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
       propertyPath: m_Name
       value: Backdrop Canvas

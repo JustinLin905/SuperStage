@@ -9036,6 +9036,10 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5236953274159058155, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: f05859285b4651e4c85a9b32a7e3c51d, type: 2}
     - target: {fileID: 6733967867318396570, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
       propertyPath: m_PresetInfoIsWorld
       value: 1
