@@ -5017,6 +5017,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireworks: {fileID: 2963668897848552026}
   slideshow: {fileID: 0}
+  backdropCanvas: {fileID: 4400818966755916291}
 --- !u!1 &924945706715011018
 GameObject:
   m_ObjectHideFlags: 0
