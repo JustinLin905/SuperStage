@@ -772,6 +772,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireworks: {fileID: 0}
+  slideshow: {fileID: 0}
 --- !u!1 &4841077765535204716
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +930,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28907d6e4e37bf429f73faaccf700f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceEnv: {fileID: 0}
+  triggerSpaceSlideNum: 3
   scrollRect: {fileID: 8741523871246455617}
   contentPanel: {fileID: 8201094999862860386}
   sampleListItem: {fileID: 6960743880255678293}
