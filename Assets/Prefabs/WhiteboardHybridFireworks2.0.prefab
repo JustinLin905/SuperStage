@@ -5016,6 +5016,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireworks: {fileID: 2963668897848552026}
+  slideshow: {fileID: 0}
+  backdropCanvas: {fileID: 4400818966755916291}
 --- !u!1 &924945706715011018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5107,7 +5109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spaceEnv: {fileID: 0}
-  triggerSpaceSlideNum: 17
+  triggerSpaceSlideNum: 18
   scrollRect: {fileID: 2156621635210714459}
   contentPanel: {fileID: 7112610556031746897}
   sampleListItem: {fileID: 5116275752615564759}
@@ -10076,6 +10078,7 @@ Transform:
   - {fileID: 3204382618329638217}
   - {fileID: 5630420242982150281}
   - {fileID: 3870956367468559958}
+  - {fileID: 8790050866711223510}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7983264310587250330
@@ -25610,3 +25613,118 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!1001 &8484707795434239720
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 7054663585208558232}
+    m_Modifications:
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5236953274159058155, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: c798a871e7e18d046ba3851a4175bda3, type: 2}
+    - target: {fileID: 6733967867318396570, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8873638019076363714, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+      propertyPath: m_Name
+      value: Backdrop Canvas
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+--- !u!95 &4400818966755916291 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5236953274159058155, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+  m_PrefabInstance: {fileID: 8484707795434239720}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &8790050866711223510 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 883607642737977918, guid: dd202e021649cf14cb86bf8d8039eff1, type: 3}
+  m_PrefabInstance: {fileID: 8484707795434239720}
+  m_PrefabAsset: {fileID: 0}

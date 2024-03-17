@@ -10,6 +10,14 @@ public class Presenter : MonoBehaviour
     [SerializeField]
     MainCamera spectatorCamera;
 
+    private Animator cameraBackdropCanvas;
+
+    private void Start()
+    {
+        // Find object named "BackdropCanvas" in the hierarchy
+        cameraBackdropCanvas = GameObject.Find("Camera Backdrop Canvas").GetComponent<Animator>();
+    }
+
     void FixedUpdate()
     {
         // follow player by default, in fixed update to be called first, may be overridden
@@ -20,7 +28,7 @@ public class Presenter : MonoBehaviour
     public void UpdateCameraFollow(Transform target)
     {
         cameraFollow = target;
-        
+
         // if target is camera, switch out of 2D mode
         /*if (cameraFollow == transform && spectatorCamera.Is2D)
         {
@@ -28,7 +36,8 @@ public class Presenter : MonoBehaviour
         }*/
     }
 
-    void LateUpdate() {
+    void LateUpdate()
+    {
         if (cameraFollow == transform && spectatorCamera.Is2D)
         {
             spectatorCamera.SwitchFOV(false);
@@ -41,9 +50,21 @@ public class Presenter : MonoBehaviour
 
     public void StartFireworks()
     {
-        if (cameraFollow != transform) {
+        if (cameraFollow != transform)
+        {
             cameraFollow.GetComponent<Screen>().PlayFireworks();
         }
     }
 
+    public void NextSlide()
+    {
+        cameraFollow.GetComponent<Screen>().NextSlide();
+        cameraBackdropCanvas.SetTrigger("NextSlide");
+    }
+
+    public void PreviousSlide()
+    {
+        cameraFollow.GetComponent<Screen>().PreviousSlide();
+        cameraBackdropCanvas.SetTrigger("PreviousSlide");
+    }
 }

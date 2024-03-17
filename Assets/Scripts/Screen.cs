@@ -7,6 +7,11 @@ public class Screen : MonoBehaviour
 
     [SerializeField]
     GameObject fireworks;
+    [SerializeField]
+    Slideshow slideshow;
+    // Canvas which sits behind the slide, used to display arrows when hand gestures used to change slides
+    [SerializeField]
+    Animator backdropCanvas;
 
     private void OnTriggerStay(Collider other)
     {
@@ -30,4 +35,14 @@ public class Screen : MonoBehaviour
         fireworks.GetComponent<ParticleSystem>().Play();
     }
     
+    public void NextSlide() {
+        slideshow.NextSlide();
+        backdropCanvas.SetTrigger("NextSlide");
+    }
+
+    public void PreviousSlide() {
+        Debug.Log("Screen.cs: PreviousSlide()");
+        slideshow.PreviousSlide();
+        backdropCanvas.SetTrigger("PreviousSlide");
+    }
 }
