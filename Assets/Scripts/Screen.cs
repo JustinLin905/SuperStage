@@ -32,7 +32,6 @@ public class Screen : MonoBehaviour
     }
 
     public void PlayFireworks() {
-        Debug.Log("Playing fireworks");
         fireworks.GetComponent<ParticleSystem>().Play();
     }
     
