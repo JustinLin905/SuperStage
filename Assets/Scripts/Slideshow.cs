@@ -8,9 +8,13 @@ public class Slideshow : MonoBehaviour
 
     [SerializeField]
     SpaceEnvironment spaceEnv;
+    [SerializeField]
+    Brayden brayden;
 
     [SerializeField]
-    int triggerSpaceSlideNum = 18;
+    int triggerSpaceSlideNum = 1;
+    [SerializeField]
+    int triggerBraydenSlideNum = 1;
 
     public ScrollRect scrollRect;
     public RectTransform contentPanel;
@@ -63,7 +67,7 @@ public class Slideshow : MonoBehaviour
             contentPanel.localPosition.z);
 
             if (contentPanel.localPosition.x == 0 - (currentItem * (sampleListItem.rect.width + HLG.spacing) + adjustment)) {
-                CheckForEnvironmentTriggers();
+                CheckForSlideTriggers();
                 isSnapped = true;
             }
         }
@@ -81,7 +85,7 @@ public class Slideshow : MonoBehaviour
                 contentPanel.localPosition.y, 
                 contentPanel.localPosition.z);
 
-            CheckForEnvironmentTriggers();
+            CheckForSlideTriggers();
         }
     }
 
@@ -93,12 +97,13 @@ public class Slideshow : MonoBehaviour
                 contentPanel.localPosition.y, 
                 contentPanel.localPosition.z);
 
-            CheckForEnvironmentTriggers();
+            CheckForSlideTriggers();
         }
     }
 
-    public void CheckForEnvironmentTriggers() {
+    public void CheckForSlideTriggers() {
         spaceEnv.TriggerSpaceEnvironemnt(currentItem == triggerSpaceSlideNum);
+        brayden.TriggerBrayden(currentItem == triggerBraydenSlideNum);
     }
 
     IEnumerator GenerateSlides() {
