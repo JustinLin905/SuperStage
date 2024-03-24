@@ -5108,7 +5108,7 @@ PrefabInstance:
       objectReference: {fileID: 1048402105}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: triggerSpaceSlideNum
-      value: 22
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: triggerBraydenSlideNum
@@ -5954,7 +5954,7 @@ PrefabInstance:
       objectReference: {fileID: 1048402105}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: triggerSpaceSlideNum
-      value: 22
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: triggerBraydenSlideNum
@@ -24031,7 +24031,7 @@ PrefabInstance:
       objectReference: {fileID: 1048402105}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: triggerSpaceSlideNum
-      value: 22
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: triggerBraydenSlideNum
