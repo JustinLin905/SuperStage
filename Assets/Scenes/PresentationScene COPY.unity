@@ -5103,6 +5103,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1856433132}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: defaultSlide
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: importSlides
       value: 
       objectReference: {fileID: 1048402105}
@@ -24025,6 +24029,10 @@ PrefabInstance:
       propertyPath: spaceEnv
       value: 
       objectReference: {fileID: 1856433132}
+    - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
+      propertyPath: defaultSlide
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 4450703213912639438, guid: 3252f2d3fd1facb4fb24f22dcf7b67df, type: 3}
       propertyPath: importSlides
       value: 

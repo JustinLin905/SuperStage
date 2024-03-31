@@ -15,6 +15,8 @@ public class Slideshow : MonoBehaviour
     int triggerSpaceSlideNum = 1;
     [SerializeField]
     int triggerBraydenSlideNum = 1;
+    [SerializeField]
+    int defaultSlide = 0;
 
     public ScrollRect scrollRect;
     public RectTransform contentPanel;
@@ -45,7 +47,7 @@ public class Slideshow : MonoBehaviour
         adjustment = sampleListItem.rect.width / 2;
 
         // Get slides from ImportSlides and then instantiate them
-        StartCoroutine(GenerateSlides());
+        StartCoroutine(SetupSlides());
     }
 
     // Update is called once per frame
@@ -106,7 +108,7 @@ public class Slideshow : MonoBehaviour
         brayden.TriggerBrayden(currentItem == triggerBraydenSlideNum);
     }
 
-    IEnumerator GenerateSlides() {
+    IEnumerator SetupSlides() {
         yield return new WaitForSeconds(0.1f);
         slides = importSlides.GetSlides();
         // Debug.Log("Slides: " + slides);
@@ -136,6 +138,17 @@ public class Slideshow : MonoBehaviour
             {
                 Debug.LogError("There is no child GameObject named 'Image' in the prefab.");
             }
+        }
+
+        // Wait a frame for the slides to be instantiated
+        yield return null;
+
+        // Set default slide, if valid
+        if (defaultSlide > 0 && defaultSlide < slides.Count) {
+            contentPanel.localPosition = new Vector3(
+                contentPanel.localPosition.x - defaultSlide * (sampleListItem.rect.width + HLG.spacing), 
+                contentPanel.localPosition.y, 
+                contentPanel.localPosition.z);
         }
     }
 }
