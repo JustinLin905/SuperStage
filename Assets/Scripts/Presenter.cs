@@ -11,6 +11,9 @@ public class Presenter : MonoBehaviour
     MainCamera spectatorCamera;
 
     private Animator cameraBackdropCanvas;
+    private float lastCallTimePrevious = 0f;
+    private float lastCallTimeNext = 0f;
+    private float cooldown = 0.5f; // Cooldown period in seconds
 
     private void Start()
     {
@@ -58,12 +61,26 @@ public class Presenter : MonoBehaviour
 
     public void NextSlide()
     {
+        if (Time.time - lastCallTimeNext < cooldown)
+        {
+            return;
+        }
+
+        lastCallTimeNext = Time.time;
+
         cameraFollow.GetComponent<Screen>().NextSlide();
         cameraBackdropCanvas.SetTrigger("NextSlide");
     }
 
     public void PreviousSlide()
     {
+        if (Time.time - lastCallTimePrevious < cooldown)
+        {
+            return;
+        }
+
+        lastCallTimePrevious = Time.time;
+
         cameraFollow.GetComponent<Screen>().PreviousSlide();
         cameraBackdropCanvas.SetTrigger("PreviousSlide");
     }
